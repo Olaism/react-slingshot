@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  build:
+  test:
+  analyze:
+workflows:
+  my_workflow:
+  jobs:
+    - build
+    - test:
+        requires:
+          build
+    - analyze:
+        requires:
+          test
